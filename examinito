@@ -1,0 +1,104 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#include "math.h"
+using namespace std;
+void main () 
+{float base, altura, a, b, c, d, x1, x2, x, xr, xi;
+int opcion, n, area; 
+do
+ {
+ cout<<"\tmenu\n";
+ cout<<"1.par\n";
+ cout<<"2.impar\n";
+ cout<<"3.valor absoluto\n";
+ cout<<"4.ecuacion cuadratica\n";
+ cout<<"5.area de un triangulo\n";
+ cout<<"0.salir\n";
+ cout<<"ingrese opcion: ";
+ cin>>opcion;
+
+
+ switch(opcion)
+  {case 1:
+     cout<<"\tpar\n";
+	 cout<<"ingrese numero: "; 
+     cin>>n;
+     if (n%2==0)
+      cout<<n<<" "<<"es par\n";
+     break;
+   case 2:
+     cout<<"\timpar\n";
+	 cout<<"ingrese numero: ";
+     cin>>n;
+     if (n%2==1)
+      cout<<n<<" "<<"es impar\n";
+     break;
+   case 3:
+   cout<<"\tvalor absoluto\n";
+   cout<<"ingrse numero: ";
+   cin>>n;
+   if (n<0)
+   {(n=n*-1);
+   cout<<"valor absoluto es: "<<n<<"\n";
+   }
+
+   else
+	   cout<<"valor absoluto es: "<<n<<"\n";
+   break;
+   case 4:
+   cout<<"\tecuacion cuadratica\n";
+	   cout<<"ingrese a: ";
+       cin>> a;
+       if (a!=0)
+       {
+       cout<<"ingrase b: ";
+       cin>>b;
+       cout<<"ingrese c: ";
+       cin>> c;
+       d=b*b-4*a*c;
+       if (d>0)
+       {
+       x1=(-b+sqrt(d))/(2*a);
+       x2=(-b-sqrt(d))/(2*a);
+       cout<<"x1= "<<x1<<"\n";
+       cout<<"x2= "<<x2<<"\n";
+       }
+       else
+       {if (d<0)
+       {xr=-b/(2*a);
+       xi=sqrt(-(b*b-4*a*c));
+       cout<<"x1= "<<xr<<"+"<<xi<<"i"<<"\n";
+       cout<<"x2= "<<xr<<"-"<<xi<<"i"<<"\n";
+       }
+       else
+       x=-b/(2*a);
+       cout<<"x= "<<x;
+       }
+       }
+       else
+       cout<<"error\n";
+
+   break;
+   case 5:
+	   cout<<"\tarea de un triangulo\n";
+	   cout<<"ingrese base: ";
+	   cin>>base;
+	   cout<<"ingrese altura: ";
+       cin>>altura;
+	   (area=(base*altura)/2);
+	   cout<<"el area es:"<<area<<"\n";
+    break;
+   case 0:
+	   cout<<"saliendo\n";
+	break;
+   default: 
+	   cout<<"error\n";
+ }
+ } 
+ while (opcion!=0);
+ 
+getch();
+}
+
+
